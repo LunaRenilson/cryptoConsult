@@ -60,14 +60,16 @@ function App() {
 					chartModal ? "blur-xl" : ""
 				}`}
 			>
-				<ul className="flex gap-3 w-2/3 flex-wrap p-5 justify-center">
+				<ul className="flex gap-3 w-2/3 flex-wrap p-5 justify-center group">
 					{filteredCoins.map((coin) => (
 						<li
 							key={coin.id}
-							className="border-1 p-3 rounded-lg text-green-800 bg-green-400 hover:cursor-pointer active:bg-green-300"
+							className="border-1 rounded-lg text-gray-800 bg-gray-200 hover:cursor-pointer active:bg-green-300 flex items-center gap-2 hover:scale-105"
 							onClick={() => setChartModal(coin.id)}
 						>
-							<h2>{coin.name}</h2>
+
+							<img src={coin.image} alt="coin image" className="w-10 h-10 p-1 border-gray-500"/>
+							<p className="p-2 font-semibold">{coin.name}</p>
 						</li>
 					))}
 				</ul>
